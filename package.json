@@ -15,21 +15,24 @@
     "@mantine/form": "^6.0.5",
     "@mantine/hooks": "^6.0.2",
     "@mantine/next": "^6.0.2",
-    "@nivo/bar": "^0.80.0",
-    "@nivo/core": "^0.80.0",
-    "@tabler/icons-react": "^2.13.1",
+    "@nivo/bar": "^0.63.0",
+    "@nivo/core": "^0.63.0",
+    "@tabler/icons-react": "^2.20.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "firebase": "^9.22.0",
     "next": "13.2.4",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swiper": "^9.1.1",
+    "tabler": "^1.0.0-alpha.8",
+    "tabler-icons-react": "^1.56.0",
     "typescript": "5.0.2",
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "typescript": "5.0.2"
+    "react-router-dom": "^6.11.2"
   }
 }

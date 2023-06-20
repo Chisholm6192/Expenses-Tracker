@@ -1,3 +1,4 @@
+import React from 'react';
 // Next Library
 import Image from 'next/image';
 // Mantine Library
@@ -9,7 +10,6 @@ import creditCard from '../images/creditcard.png';
 import circle from '../images/circle.png';
 import circle2 from '../images/circle2.png';
 import circle3 from '../images/circle3.png';
-
 
 export default function LandingPage() {
   const [opened, { toggle }] = useDisclosure(false);  
@@ -113,7 +113,7 @@ export default function LandingPage() {
           <div className={styles.overviewHero}>
             <h1>Keep tabs on your expenses</h1>
             <h6>We help you easily connect all your cash, credit, loan and investment accounts.  You can see your expenses and complete financial picture in ExTracker</h6>
-            <a className={styles.overviewButton}>Get Started</a>
+            <a className={styles.overviewButton} href="/register">Get Started</a>
           </div>
           <div className={styles.overviewImageContainer}>
             <Image
