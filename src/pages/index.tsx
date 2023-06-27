@@ -11,7 +11,17 @@ import circle from '../images/circle.png';
 import circle2 from '../images/circle2.png';
 import circle3 from '../images/circle3.png';
 
-export default function LandingPage() {
+import Link from 'next/link';
+import LandingPage from './LandingPage';
+import Dashboard from './dashboard';
+
+export default function Home(){
+  return(
+    <Dashboard/>
+  )
+}
+
+/*export default function LandingPage() {
   const [opened, { toggle }] = useDisclosure(false);  
   const label = opened ? 'Close navigation' : 'Open navigation';
 
@@ -49,8 +59,8 @@ export default function LandingPage() {
             <li><a href="#features">Features</a></li>
           </ul>
           <div className={styles.userReg}>
-            <li><a href="/login" className={styles.loginButton}>Log In</a></li>
-            <li><a href="/register" className={styles.rgstrButton}>Sign Up</a></li>
+            <li><Link href="/login" className={styles.loginButton}>Log In</Link></li>
+            <li><Link href="/register" className={styles.rgstrButton}>Sign Up</Link></li>
           </div>
           <div className={styles.burgerMenuContainer}>
           <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
@@ -69,12 +79,14 @@ export default function LandingPage() {
                     </a>
                     <Burger color="white" className={styles.burger2} opened={opened} onClick={toggle} aria-label={label} />
                   </div>
+                  <nav>
                   <ul className={styles.topbarLinksBurger}>
                     <li onClick={toggle}><a href="#overview">Overview</a></li>
                     <li onClick={toggle}><a href="#features">Features</a></li>
                     <li onClick={toggle}><a href="/login">Log In</a></li>
                     <li onClick={toggle}><a href="/register">Sign Up</a></li>
                   </ul>
+                  </nav>
                 </div>
               ) : ( 
                 ""
@@ -158,4 +170,4 @@ export default function LandingPage() {
       </div>
     </>
   );
-}
+}*/

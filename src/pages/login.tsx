@@ -1,6 +1,12 @@
 import react, {useState} from 'react';
 import { initializeApp } from "firebase/app";
 import {getAuth, signInWithEmailAndPassword, browserLocalPersistence} from "firebase/auth";
+import {Route, Routes} from 'react-router-dom';
+import React from 'react';
+import Dashboard from './dashboard';
+import {Outlet, Link} from 'react-router-dom';
+
+import {useRouter} from 'next/router';
 
 // Mantine Library
 import { TextInput } from '@mantine/core';
@@ -28,12 +34,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const AuthContext = React.createContext('False');
+
 
 
 //Login authentication function
 function Login() {
     const [enterEmail, setEmail] = useState('');
     const [enterPassword, setPassword] = useState('');
+
+    const router = useRouter();
 
     const Login = () => { //When called, logs user into account, if it exists
         signInWithEmailAndPassword(auth, enterEmail, enterPassword)
@@ -43,6 +53,8 @@ function Login() {
           alert(output)
 
           auth.setPersistence(browserLocalPersistence);
+
+          router.push('./dashboard');
         })
         .catch((error) => { //different error messages
           /*(if (error == 'FirebaseError: Firebase: Error (auth/user-not-found).'){

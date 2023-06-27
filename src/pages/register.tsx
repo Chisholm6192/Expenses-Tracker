@@ -1,7 +1,7 @@
 import react, {useState} from 'react';
 import { initializeApp } from "firebase/app";
 import {getAuth, createUserWithEmailAndPassword, browserLocalPersistence} from "firebase/auth";
-
+import { useNavigate } from 'react-router-dom';
 // Mantine Library
 import { Flex, TextInput } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
@@ -11,6 +11,8 @@ import * as Yup from 'yup';
 import { IconId, IconMail, IconEye } from '@tabler/icons-react';
 // Styles | Images
 import styles from '../styles/auth.module.css';
+
+import Login from './login';
 
 //Firebase credentials
 const firebaseConfig = {
