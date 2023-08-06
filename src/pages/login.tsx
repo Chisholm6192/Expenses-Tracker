@@ -57,7 +57,7 @@ function Login() {
           router.push('./dashboard');
         })
         .catch((error) => { //different error messages
-          /*(if (error == 'FirebaseError: Firebase: Error (auth/user-not-found).'){
+          if (error == 'FirebaseError: Firebase: Error (auth/user-not-found).'){
             alert('Account does not exist')
           }
           else if (error == 'FirebaseError: Firebase: Error (auth/invalid-email).'){
@@ -67,8 +67,8 @@ function Login() {
             alert('No Password entered')
           }
           else if (error == 'FirebaseError: Firebase: Error (auth/wrong-password).'){
-             //alert('Incorrect Password')
-          }*/
+            alert('Incorrect Password')
+          }
         });
     }
 

@@ -3,14 +3,28 @@ import { useState } from "react";
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../scripts/firebase/config';
 import categoryToColor from "../tools/categoryToColor";
+//import styles from '../styles/auth.module.css';
+import styles from '../styles/Dashboard.module.css';
+
 
 
 
 export default function Dashboard() {
   return (
     <>
-      <div><OverviewGraph /></div>
-      <div style={{ display: 'flex', flexDirection: "column", alignItems: "center" }}><TestingPieGraph /></div>
+    <div className={styles.background}>
+                <div className={styles.topbar}>
+                        <div className={styles.topbarBrand}>
+                            <div className={styles.topbarLogo}>
+                                <span className={styles.circle}></span>
+                                <span className={styles.circle}></span>
+                            </div>
+                            <h1 style={{color: "white"}}>ExTracker</h1>
+                        </div>
+                </div>
+      <div className={styles.background}><OverviewGraph /></div>
+      <div style={{ display: 'flex', flexDirection: "column", alignItems: "center", backgroundColor: "black"}}><TestingPieGraph /></div>
+    </div>
     </>
   );
 }
@@ -65,16 +79,20 @@ const TestingPieGraph = () => {
   }
   return(
     <>
-      <h3>Expense Name</h3>
+    <div className={styles.background}>
+    <div className={styles.expenseinput}>
+      <h3 style={{paddingRight: "20px"}}>Expense Name: </h3>
       <input onChange={setName}></input>
-      <br />
-      <h3>Amount $</h3>
+    </div>
+    <div className={styles.expenseinput}>
+      <h3 style={{paddingRight: "20px"}}>Amount ($):</h3>
       <input onChange={setAmount} type="number" min="0.01" step="0.01"></input>
-      <br />
-      <h3>Date</h3>
+    </div>
+    <div className={styles.expenseinput}>
+      <h3 style={{paddingRight: "20px"}}>Date:</h3>
       <input onChange={setDate} type="date"></input>
-      <br />
-      <h3>Category</h3>
+      
+      <h3 style={{paddingLeft:"100px", paddingRight: "20px"}}>Category:</h3>
       <select onChange={setCategory}>
         <option>Food</option>
         <option>Travel</option>
@@ -86,9 +104,12 @@ const TestingPieGraph = () => {
 
       </select>
       <br />
-      <button onClick={addExpense}>Add Expense</button>
+      </div>
+      <br />
+      <button className={styles.expensebtn} onClick={addExpense}>Add Expense</button>
       <br />
       <pre>{JSON.stringify(expenseData, null, 2)}</pre>
+      </div>
     </>
   );
 }

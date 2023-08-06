@@ -53,6 +53,9 @@ function Register() {
         else if (error == 'FirebaseError: Firebase: Password should be at least 6 characters (auth/weak-password).'){
             alert('Password must be a least 6 characters')
         }
+        else if (error == 'FirebaseError: Firebase: Error (auth/email-already-in-use).'){
+            alert('Email is Already in Use')
+        }
         else {
             alert(error)
         }
