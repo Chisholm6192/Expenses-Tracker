@@ -3,7 +3,6 @@ import { useState } from "react";
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../scripts/firebase/config';
 import categoryToColor from "../tools/categoryToColor";
-//import styles from '../styles/auth.module.css';
 import styles from '../styles/Dashboard.module.css';
 
 
@@ -100,8 +99,8 @@ const TestingPieGraph = () => {
         <option>Shopping</option>
         <option>Health</option>
         <option>Bills</option>
+        <option>Education</option>
         <option>Other</option>
-
       </select>
       <br />
       </div>
